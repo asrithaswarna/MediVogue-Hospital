@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Prescriptions | MediVogue Hospital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .prescription-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #0f766e;
+        }
+        .doctor-info {
+            color: #0f766e;
+            font-weight: bold;
+        }
+        .date {
+            color: gray;
+            font-size: 14px;
+        }
+        .remarks {
+            background: #f0f9ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .prescription {
+            font-family: monospace;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/script.js"></script>
+    <header>
+        <img src="logo_hms.png" height="70">
+        <div class="logo">
+            <h1>MediVogue Hospital</h1>
+            <p>Care • Compassion • Commitment</p>
+        </div>
+        <p id="dateTime"></p>
+    </header>
+
+    <nav>
+        <a href="patient_dashboard.html">Home</a>
+        <a href="pat_consult.html">Previous Consultations</a>
+        <a href="pat_prescription.html">Prescription</a>
+        <a href="lab_report_pat.html">Lab Reports</a>
+        <a href="pat_prescription.html">My Prescriptions</a>
+        <a href="cont_admin_pat.html">Contact</a>
+        <button onclick="logout()">Logout</button>
+    </nav>
+    
+    <br><br>
+    <h2>My Prescriptions & Doctor's Remarks</h2>
+    <br>
+    <div style="text-align: center; margin: 20px;">
+        <label>Filter by Doctor: </label>
+        <select id="doctorFilter" onchange="filterPrescriptions()">
+            <option value="all">All Doctors</option>
+            <option value="Dr.Meera">Dr. Meera</option>
+            <option value="Dr.Arjun">Dr. Arjun</option>
+            <option value="Dr.Ravi">Dr. Ravi</option>
+        </select>
+    </div>
+    
+    <!-- DOM Manipulation: Prescriptions loaded dynamically -->
+    <div id="prescriptionsContainer">
+        <!-- JavaScript will load prescriptions here -->
+    </div>
+    
+    <!-- Event Handler: Filter prescriptions -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>

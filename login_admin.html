@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Admin Login</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+                <header>
+<img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+     <p id="dateTime"></p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointment.html">Appointments</a>
+    <a href="departments.html">Departments</a>
+    <a href="contactadmin.html">Contact</a>
+     <button onclick="logout()">Logout</a>
+</nav>
+        <form method="get" action="admin_dashboard.html"><br><br>
+            Emp ID: <input type="text" pattern="[0-9]{4}" placeholder="Enter your ID number" required>
+            <br><br>Password: <input type="password" pattern="[0-9]{4}[A-Za-z][0-9]{4}" placeholder="Enter Password" required><br><br>
+            <br><br><i>Emp ID is a 4-digit number.<br>
+            Password consists of both numbers and letters.<br>
+        (in order: num(4)-char(1)-num(4)).</i><br><br>
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn">Reset</button>
+        </form>
+         <script src="js/script.js" defer>
+</script>
+    </body>
+</html>

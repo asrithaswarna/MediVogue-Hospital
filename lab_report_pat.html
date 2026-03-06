@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Lab Reports | MediVogue Hospital</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+    <header>
+        <img src="logo_hms.png" height="70">
+        <div class="logo">
+            <h1>MediVogue Hospital</h1>
+            <p>Care • Compassion • Commitment</p>
+        </div>
+        <p id="dateTime"></p>
+    </header>
+
+    <nav>
+        <a href="patient_dashboard.html">Home</a>
+        <a href="pat_consult.html">Previous Consultations</a>
+        <a href="pat_prescription.html">Prescription</a>
+        <a href="lab_report_pat.html">Lab Reports</a>
+        <a href="cont_admin_pat.html">Contact</a>
+        <button onclick="logout()">Logout</button>
+    </nav>
+    <br><br><br>
+    <h2>Lab Reports</h2><br><br><br>
+    
+    <!-- Exception Handling Demo: Try fetching reports -->
+    <div id="reportMessage" style="text-align: center; color: blue;"></div>
+    
+    <table id="labReportsTable">
+        <tr>
+            <th>S.No</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Tests</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Report</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>12-01-2026</td>
+            <td>Bindu</td>
+            <td>Full-Body CheckUp</td>
+            <td>1500</td>
+            <td class="av">Completed</td>
+            <td><a href="full_body_checkup.pdf" onclick="openReport('full_body_checkup.pdf', event)">📜</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>15-02-2026</td>
+            <td>Bindu</td>
+            <td>Blood Test</td>
+            <td>1500</td>
+            <td class="av">Completed</td>
+            <td><a href="Bindu_Blood_Test_Report.pdf" onclick="openReport('Bindu_Blood_Test_Report.pdf', event)">📜</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>22-02-2026</td>
+            <td>Bindu</td>
+            <td>Thyroid Test</td>
+            <td>500</td>
+            <td class="n">Scheduled</td>
+            <td>Pending</td>
+        </tr>
+    </table>
+    <br><br>
+    <!-- Event Handler Demo: Button to refresh reports -->
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="refreshReports()">Refresh Reports</button>
+    </div>
+    
+<section class="notice">
+    <h2>Announcements</h2>
+    <marquee>Free Health Checkup Camp on Sunday | COVID-19 Vaccination Available</marquee>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 MediVogue Hospital | All Rights Reserved</p>
+    <p>Email: contact@medivogue.com | Phone: +91 98765 43210</p>
+</footer>
+    <script src="js/script.js" defer></script>
+    </body>
+</html>

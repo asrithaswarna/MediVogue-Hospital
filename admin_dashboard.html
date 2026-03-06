@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | MediVogue Hospital</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<header>
+<img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+</header>
+<body>
+<header class="top-bar">
+    <h2>Admin Dashboard</h2>
+     <p id="dateTime"></p>
+</header>
+
+<section class="dashboard">
+
+    <!-- Statistics Cards -->
+    <nav>
+    <a href="doc_dashboard.html">Home</a>
+    <a href="pat_adm.html">Patients</a>
+    <a href="doc_avail_admin.html">Doctor Availability</a>
+    <a href="billing.html">Billing</a>
+    <a href="medicines.html">Medicines</a>
+    <a href="cont_adm_adm.html">Contact</a>
+     <button onclick="logout()">Logout</button><!--javascript to display pop up and diplay home page
+    -->
+</nav><br><br><br><br>
+<div class="stats-container">
+    <div class="stat-box">
+        <h3>Patients Registered</h3>
+        <p class="count">1240</p>
+    </div>
+        </div>
+         <div class="stats-container">
+    <div class="stat-box">
+        <h3>Lab Tests Taken</h3>
+        <p class="count">860</p>
+    </div>
+         </div>
+     <div class="stats-container">
+    <div class="stat-box">
+        <h3>Medicines Sold</h3>
+        <p class="count">1520</p>
+    </div>
+</div>
+    <!-- Doctors Availability -->
+
+</section>
+
+<script src="js/script.js" defer>
+</script>
+
+</body>
+</html>

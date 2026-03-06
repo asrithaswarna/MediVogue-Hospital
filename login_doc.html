@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Doctor Login</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+                <header>
+<img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+     <p id="dateTime"></p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointment.html">Appointments</a>
+    <a href="departments.html">Departments</a>
+    <a href="contactadmin.html">Contact</a>
+    <button onclick="logout()">Logout</a>
+</nav><br><br>
+<h2>Doctor's Login</h2>
+        <form action="doc_dashboard.html" method="get"><br><br>
+            ID: <input type="text" pattern="[0-9]{4}" name="id" placeholder="Enter DOC ID" required>
+            <br><br>Password: <input type="password" name="password" pattern="[0-9]{4}[A-Za-z][0-9]{4}" placeholder="Enter your Password" required><br><br>
+            <i>ID is 4-digit number.<br>Password is consits of both numbers and letters
+                <br>(in order: num(4)-char(1)-num(num)).</i><br><br>
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn">Reset</button>
+        </form>
+        <script src="js/script.js" defer>
+</script>
+    </body>
+</html>

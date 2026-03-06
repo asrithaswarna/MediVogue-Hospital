@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    background: #f8fafc;
+    color: #1f2933;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+/* ===== Navbar ===== */
+nav {
+    background: #0f766e;
+    padding: 14px;
+    text-align: center;
+}
+
+nav a {
+    color: #ecfeff;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #facc15;
+}
+
+nav .btn {
+    background: #facc15;
+    color: #1f2933;
+    padding: 7px 14px;
+    border-radius: 20px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    height: 360px;
+    background: linear-gradient(rgba(15,118,110,0.7), rgba(15,118,110,0.7)),
+                url("hospital.jpg") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    color: white;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 40px;
+}
+
+.hero-text p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.hero-text button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #facc15;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.hero-text button:hover {
+    background: #fde047;
+}
+
+/* ===== Services ===== */
+.services {
+    padding: 50px;
+    text-align: center;
+}
+
+.service-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+.card:hover{
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    border-top: 5px solid #14b8a6;
+    font-weight: 600;
+}
+
+/* ===== Departments ===== */
+.departments {
+    background: #ecfeff;
+    padding: 50px;
+    text-align: center;
+}
+
+.departments ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.departments li {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* ===== Notice ===== */
+.notice {
+    background: #ccfbf1;
+    padding: 20px;
+    font-weight: bold;
+    color: #065f46;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #0f766e;
+    color: #ecfeff;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+header img{
+    align-content: right;
+}
+form, input{
+    text-align: center;
+}
+h1, h2, h3, h4,select{
+    text-align: center;
+}
+button{
+     background: #facc15;
+    color: #1f2933;
+    padding: 7px 14px;
+    border-radius: 20px;
+}
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.table-container h2 {
+    margin-bottom: 15px;
+    color: #0a4f7c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background: #276761;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+.av{
+    color: green;
+    font-weight: 500;
+}
+.n_av{
+    color: red;
+    font-weight: 500;
+}
+.n{
+    color: rgb(176, 176, 39);
+    font-weight: 500;
+}
+.ph{
+    text-align: center;
+    font-weight: 500;
+}
+.nav_app{
+    background-color: #facc15;
+    color: black;
+}
+.stats-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.stat-box {
+    background: white;
+    width: 220px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    border-left: 6px solid #14b8a6;
+}
+
+.stat-box h3 {
+    color: #0f766e;
+    margin-bottom: 10px;
+}
+
+.count {
+    font-size: 40px;
+    font-weight: bold;
+    color: #1f2933;
+}
+
+.stat-box span {
+    color: gray;
+    font-size: 14px;
+}
+.container_bill {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+.bill-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.print-btn {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+}
+.total {
+    margin-top: 20px;
+    color: #0a4d68;
+}
+.add-row input {
+    flex: 1;
+}
+/* Add these styles to your existing styles.css */
+
+/* Prescription Page Styles */
+.prescription-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid #0f766e;
+    transition: transform 0.3s ease;
+}
+
+.prescription-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.doctor-info {
+    color: #0f766e;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.date {
+    color: gray;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.remarks {
+    background: #f0f9ff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.prescription {
+    font-family: 'Courier New', monospace;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid #0f766e;
+}
+
+/* Icon Styles */
+.fas, .far {
+    margin-right: 5px;
+}
+
+.action-icon {
+    cursor: pointer;
+    margin: 0 5px;
+    transition: transform 0.2s;
+}
+
+.action-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Doctor Table Row Actions */
+#doctorTable td:last-child {
+    white-space: nowrap;
+}
+
+/* Add Doctor Form */
+#addDoctorForm {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid #0f766e;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#addDoctorForm input,
+#addDoctorForm select {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#addDoctorForm button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#addDoctorForm button[type="submit"] {
+    background: #28a745;
+    color: white;
+}
+
+#addDoctorForm button[type="button"] {
+    background: #dc3545;
+    color: white;
+}
+
+/* Error Message Styling */
+#errorMessage {
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Consultation Details Panel */
+#consultationDetails {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid #0f766e;
+}
+
+#consultationDetails button {
+    background: #0f766e;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Print Button */
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+/* Status Indicators with Icons */
+.av, .n, .n_av {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Hover Effects for Table Rows */
+#doctorTable tr:hover,
+#consultationsTable tr:hover,
+#labReportsTable tr:hover {
+    background-color: #f0f9ff;
+    cursor: pointer;
+}
+
+/* Add Doctor Button */
+button i {
+    margin-right: 5px;
+}

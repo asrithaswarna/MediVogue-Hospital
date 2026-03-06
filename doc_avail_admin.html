@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Availability | MediVogue Hospital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<header>
+    <img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+</header>
+<body>
+    <header class="top-bar">
+        <h2>Admin Dashboard</h2>
+        <p id="dateTime"></p>
+    </header>
+
+    <section class="dashboard">
+        <nav>
+            <a href="admin_dashboard.html">Home</a>
+            <a href="pat_adm.html">Patients</a>
+            <a href="doc_avail_admin.html">Doctor Availability</a>
+            <a href="billing.html">Billing</a>
+            <a href="medicines.html">Medicines</a>
+            <a href="cont_adm_adm.html">Contact</a>
+            <button onclick="logout()">Logout</button>
+        </nav>
+        
+        <br><br>
+        
+        <!-- Add Doctor Button with Icon -->
+        <div style="text-align: right; margin-right: 50px;">
+            <button onclick="showAddDoctorForm()" style="background: #28a745; color: white;">
+                <i class="fas fa-plus-circle"></i> Add New Doctor
+            </button>
+        </div>
+        
+        <!-- Add Doctor Form (Hidden by default) -->
+        <div id="addDoctorForm" style="display: none; background: white; padding: 20px; margin: 20px; border-radius: 10px;">
+            <h3><i class="fas fa-user-md"></i> Add New Doctor</h3>
+            <form onsubmit="addNewDoctor(event)">
+                <input type="text" id="docName" placeholder="Doctor Name" required>
+                <select id="docDept" required>
+                    <option value="">Select Department</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="General Medicine">General Medicine</option>
+                </select>
+                <select id="docStatus" required>
+                    <option value="av">Free</option>
+                    <option value="n">Busy</option>
+                    <option value="n_av">Not Available</option>
+                </select>
+                <button type="submit"><i class="fas fa-save"></i> Save Doctor</button>
+                <button type="button" onclick="hideAddDoctorForm()"><i class="fas fa-times"></i> Cancel</button>
+            </form>
+        </div>
+        
+        <!-- Doctors Availability Table -->
+        <div class="table-section">
+            <h3>Doctors Availability <i class="fas fa-stethoscope"></i></h3><br>
+            <table id="doctorTable">
+                <tr>
+                    <th>S.No</th>
+                    <th>Doctor Name</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                    <th>Actions <i class="fas fa-cog"></i></th>
+                </tr>
+                <tr id="doctor1">
+                    <td>1</td>
+                    <td>Dr. Meera</td>
+                    <td>Cardiology</td>
+                    <td class="av">Free <i class="fas fa-check-circle"></i></td>
+                    <td>
+                        <i class="fas fa-edit" onclick="editDoctor('doctor1')" style="cursor: pointer; color: #0f766e;"></i>
+                        <i class="fas fa-trash" onclick="deleteDoctor('doctor1')" style="cursor: pointer; color: red; margin-left: 10px;"></i>
+                    </td>
+                </tr>
+                <tr id="doctor2">
+                    <td>2</td>
+                    <td>Dr. Tej</td>
+                    <td>Neurology</td>
+                    <td class="n">Busy <i class="fas fa-clock"></i></td>
+                    <td>
+                        <i class="fas fa-edit" onclick="editDoctor('doctor2')" style="cursor: pointer; color: #0f766e;"></i>
+                        <i class="fas fa-trash" onclick="deleteDoctor('doctor2')" style="cursor: pointer; color: red; margin-left: 10px;"></i>
+                    </td>
+                </tr>
+                <tr id="doctor3">
+                    <td>3</td>
+                    <td>Dr. Arjun</td>
+                    <td>Orthopedics</td>
+                    <td class="n_av">Not Available <i class="fas fa-times-circle"></i></td>
+                    <td>
+                        <i class="fas fa-edit" onclick="editDoctor('doctor3')" style="cursor: pointer; color: #0f766e;"></i>
+                        <i class="fas fa-trash" onclick="deleteDoctor('doctor3')" style="cursor: pointer; color: red; margin-left: 10px;"></i>
+                    </td>
+                </tr>
+                <tr id="doctor4">
+                    <td>4</td>
+                    <td>Dr. Ravi</td>
+                    <td>Pediatrics</td>
+                    <td class="av">Free <i class="fas fa-check-circle"></i></td>
+                    <td>
+                        <i class="fas fa-edit" onclick="editDoctor('doctor4')" style="cursor: pointer; color: #0f766e;"></i>
+                        <i class="fas fa-trash" onclick="deleteDoctor('doctor4')" style="cursor: pointer; color: red; margin-left: 10px;"></i>
+                    </td>
+                </tr>
+                <tr id="doctor5">
+                    <td>5</td>
+                    <td>Dr. Ananya Rao</td>
+                    <td>General Medicine</td>
+                    <td class="n_av">Not Available <i class="fas fa-times-circle"></i></td>
+                    <td>
+                        <i class="fas fa-edit" onclick="editDoctor('doctor5')" style="cursor: pointer; color: #0f766e;"></i>
+                        <i class="fas fa-trash" onclick="deleteDoctor('doctor5')" style="cursor: pointer; color: red; margin-left: 10px;"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <!-- Exception Handling Demo: Error Message Container -->
+        <div id="errorMessage" style="color: red; text-align: center; display: none;"></div>
+        
+    </section>
+<section class="notice">
+    <h2>Announcements</h2>
+    <marquee>Free Health Checkup Camp on Sunday | COVID-19 Vaccination Available</marquee>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 MediVogue Hospital | All Rights Reserved</p>
+    <p>Email: contact@medivogue.com | Phone: +91 98765 43210</p>
+</footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
