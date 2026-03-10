@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <!--CO5: Meta Description-->
+        <meta name="description" content="MediVogue Hospital - Modern healthcare management system">
+<meta name="keywords" content="hospital, healthcare, doctors, appointments, medical records">
+<meta name="author" content="S.Asritha">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doctor Login</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <img src="logo_hms.png" height="70">
+            <div class="logo">
+                <h1>MediVogue Hospital</h1>
+                <p>Care • Compassion • Commitment</p>
+            </div>
+            <p id="dateTime"></p>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="appointment.html">Appointments</a>
+            <a href="departments.html">Departments</a>
+            <a href="contactadmin.html">Contact</a>
+            <button onclick="logout()">Logout</button>
+        </nav>
+        
+        <br><br>
+        <h2>Doctor's Login</h2>
+        
+        <form id="doctorLoginForm" onsubmit="return validateDoctorLogin(event)">
+            <br><br>
+            Doctor ID: <input type="text" id="doctorId" placeholder="Enter DOC ID" required>
+            <br><br>
+            Password: <input type="password" id="doctorPassword" placeholder="Enter your Password" required>
+            <br><br>
+            <div id="loginError" style="color: red; display: none;"></div>
+            <br>
+            <i>Use your assigned doctor credentials</i>
+            <br><br>
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn" onclick="resetForm()">Reset</button>
+        </form>
+        
+        <!-- Demo credentials -->
+        <div style="text-align: center; margin-top: 20px; color: gray; font-size: 12px;">
+            <p>Demo Credentials:</p>
+            <p>ID: 2001 → Password: dr.meera@cardio</p>
+            <p>ID: 2002 → Password: dr.tej@neuro</p>
+            <p>ID: 2003 → Password: dr.arjun@ortho</p>
+        </div>
+        
+        <script src="script.js" defer></script>
+    </body>
+</html>

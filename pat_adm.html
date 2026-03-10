@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--CO5: Meta Description-->
+    <meta name="description" content="MediVogue Hospital - Modern healthcare management system">
+<meta name="keywords" content="hospital, healthcare, doctors, appointments, medical records">
+<meta name="author" content="S.Asritha">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | MediVogue Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+<img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+</header>
+<body>
+<header class="top-bar">
+    <h2>Admin Dashboard</h2>
+     <p id="dateTime"></p>
+</header>
+
+<section class="dashboard">
+
+    <!-- Statistics Cards -->
+    <nav>
+    <a href="admin_dashboard.html">Home</a>
+    <a href="pat_adm.html">Patients</a>
+    <a href="doc_avail_admin.html">Doctor Availability</a>
+    <a href="billing.html">Billing</a>
+    <a href="medicines.html">Medicines</a>
+    <a href="cont_adm_adm.html">Contact</a>
+     <button onclick="logout()">Logout</button><!--javascript to display pop up and diplay home page
+    -->
+</nav><br><br><br><br>
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Cause</th>
+        <th>Doctor</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Bindu</td>
+        <td>18</td>
+        <td>Fever</td>
+        <td>Dr.Ravi</td>
+        <td class="n">Scheduled</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Avanthika</td>
+        <td>43</td>
+        <td>General CheckUp</td>
+        <td>Dr.Meera</td>
+        <td class="av">Completed</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Raju</td>
+        <td>55</td>
+        <td>Joint pains</td>
+        <td>Dr.Arjun</td>
+        <td class="n_av">Cancelled</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Hema Sri</td>
+        <td>23</td>
+        <td>Surgery</td>
+        <td>Dr.Tej</td>
+        <td class="av">Completed</td>
+    </tr>
+</table>
+</section>
+<br><br>
+<section class="notice">
+    <h2>Announcements</h2>
+    <marquee>Free Health Checkup Camp on Sunday | COVID-19 Vaccination Available</marquee>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 MediVogue Hospital | All Rights Reserved</p>
+    <p>Email: contact@medivogue.com | Phone: +91 98765 43210</p>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

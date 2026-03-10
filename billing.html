@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--CO5: Meta Description-->
+    <meta name="description" content="MediVogue Hospital - Modern healthcare management system">
+<meta name="keywords" content="hospital, healthcare, doctors, appointments, medical records">
+<meta name="author" content="S.Asritha">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Billing | MediVogue Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+<img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+</header>
+<body>
+    <header class="top-bar">
+    <h2>Admin Dashboard</h2>
+     <p id="dateTime"></p>
+</header>
+
+<section class="dashboard">
+<nav>
+    <a href="admin_dashboard.html">Home</a>
+    <a href="pat_adm.html">Patients</a>
+    <a href="doc_avail_admin.html">Doctor Availability</a>
+    <a href="billing.html">Billing</a>
+    <a href="medicines.html">Medicines</a>
+    <a href="cont_adm_adm.html">Contact</a>
+     <button onclick="logout()">Logout</button><!--javascript to display pop up and diplay home page
+    -->
+</nav><br><br><br><br><!---
+<header class="top-bar">-->
+    <h2>Patient Billing</h2><br>
+    <span id="dateTime"></span>
+
+<div class="container_bill">
+
+    <div class="bill-box">
+        <h3>Patient Details</h3>
+
+        <label>Patient Name</label>
+        <input type="text" id="pname">
+<br><br>
+        <label>Patient ID</label>
+        <input type="text" id="pid">
+<br><br>
+        <label>Date</label>
+        <input type="date">
+    </div>
+
+    <div class="bill-box">
+        <h3>Billing Details</h3>
+
+        <table id="billTable">
+            <tr>
+                <th>Service</th>
+                <th>Cost (₹)</th>
+                <th>Action</th>
+            </tr>
+        </table>
+
+        <div class="add-row">
+            <input type="text" id="service" placeholder="Service Name">
+            <input type="number" id="cost" placeholder="Cost">
+            <button onclick="addRow()">Add</button>
+        </div>
+
+        <h3 class="total">Total Amount: ₹ <span id="total">0</span></h3>
+
+        <button class="print-btn" onclick="printBill()">Print Bill</button>
+    </div>
+<br><br>
+</div>
+
+<section class="notice">
+    <h2>Announcements</h2>
+    <marquee>Free Health Checkup Camp on Sunday | COVID-19 Vaccination Available</marquee>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 MediVogue Hospital | All Rights Reserved</p>
+    <p>Email: contact@medivogue.com | Phone: +91 98765 43210</p>
+</footer>
+<script src="script.js" defer>
+</script>
+
+</body>
+</html>

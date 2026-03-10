@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--CO5: Meta Description-->
+    <meta name="description" content="MediVogue Hospital - Modern healthcare management system">
+<meta name="keywords" content="hospital, healthcare, doctors, appointments, medical records">
+<meta name="author" content="S.Asritha">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Medicines | MediVogue Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+<img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+</header>
+<body>
+<header class="top-bar">
+    <h2>Admin Dashboard</h2>
+     <p id="dateTime"></p>
+</header>
+
+<section class="dashboard">
+
+    <!-- Statistics Cards -->
+    <nav>
+    <a href="admin_dashboard.html">Home</a>
+    <a href="pat_adm.html">Patients</a>
+    <a href="doc_avail_admin.html">Doctor Availability</a>
+    <a href="billing.html">Billing</a>
+    <a href="medicines.html">Medicines</a>
+    <a href="cont_adm_adm.html">Contact</a>
+     <button onclick="logout()">Logout</button><!--javascript to display pop up and diplay home page
+    -->
+</nav><br><br><br><br>
+<body>
+    <h2>Medicines Availability</h2>
+    <p>Medicines:</p> 
+    <input type="text" id="search" placeholder="Search medicine..." onkeyup="searchMedicine()">
+<div class="container">
+<br><br>
+<table id="medicineTable">
+    <tr>
+        <th>Medicine Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Status</th>
+    </tr>
+
+    <tr>
+        <td>Paracetamol</td>
+        <td>Pain Relief</td>
+        <td>120</td>
+        <td class="available">Available</td>
+    </tr>
+
+    <tr>
+        <td>Amoxicillin</td>
+        <td>Antibiotic</td>
+        <td>35</td>
+        <td class="low">Low Stock</td>
+    </tr>
+
+    <tr>
+        <td>Insulin</td>
+        <td>Diabetes</td>
+        <td>0</td>
+        <td class="out">Out of Stock</td>
+    </tr>
+
+    <tr>
+        <td>Vitamin D3</td>
+        <td>Supplements</td>
+        <td>75</td>
+        <td class="available">Available</td>
+    </tr>
+
+</table>
+<br><br>
+</div>
+
+<script src="script.js" defer>
+</script>
+
+<section class="notice">
+    <h2>Announcements</h2>
+    <marquee>Free Health Checkup Camp on Sunday | COVID-19 Vaccination Available</marquee>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 MediVogue Hospital | All Rights Reserved</p>
+    <p>Email: contact@medivogue.com | Phone: +91 98765 43210</p>
+</footer>
+</body>
+</html>

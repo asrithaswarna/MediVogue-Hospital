@@ -1,0 +1,8 @@
+{
+  "doctors": [
+    { "id": 1, "name": "Dr. Meera", "department": "Cardiology", "status": "available", "patients": 3 },
+    { "id": 2, "name": "Dr. Tej", "department": "Neurology", "status": "busy", "patients": 5 },
+    { "id": 3, "name": "Dr. Arjun", "department": "Orthopedics", "status": "unavailable", "patients": 0 }
+  ],
+  "lastUpdated": "2024-01-15T10:30:00Z"
+}

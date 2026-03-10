@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <!--CO5: Meta Description-->
+        <meta name="description" content="MediVogue Hospital - Modern healthcare management system">
+<meta name="keywords" content="hospital, healthcare, doctors, appointments, medical records">
+<meta name="author" content="S.Asritha">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment | MediVogue Hospital</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+<img src="logo_hms.png" height="70">
+    <div class="logo">
+        <h1>MediVogue Hospital</h1>
+        <p>Care • Compassion • Commitment</p>
+    </div>
+    <p id="dateTime"></p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointment.html">Appointments</a>
+    <a href="departments.html">Departments</a>
+    <a href="contactadmin.html">Contact</a>
+    <a href="logins.html" class="btn">Login</a>
+</nav>
+<br><br><br>
+<h1>Book An Appointment</h1>
+<h3>
+    <!-- CO2: Form element -->
+<form action="successful.html" method="get"><br><br>  <!-- CO2: Form element -->
+    Name:<input type="text" placeholder="Enter your name" required>  <!-- CO2: Text input -->
+    Age: <input type="number" placeholder="Enter your Age" required><br><br>  <!-- CO2: Number input -->
+    Department: <select required>  <!-- CO2: Select dropdown -->
+        <option>--Select--</option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Orthopedics</option>
+        <option>Pediatrics</option>
+        <option>General Medicine</option>
+    </select>
+    Phone no.<input type="tel" placeholder="Enter your Phone number" required pattern="[0-9]{10}"><br><br>
+    Date: <input type="date" required>
+    Time: <input type="time" required><br><br>
+    <button type="submit">Submit</button>
+    <button type="Reset">Reset</button>
+</form>
+</h3><br><br><br>
+<!-- ===== Announcements ===== -->
+<section class="notice">
+    <h2>Announcements</h2><br>
+    <marquee>Free Health Checkup Camp on Sunday | COVID-19 Vaccination Available</marquee>
+</section>
+<script src="script.js" defer>
+</script>
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 MediVogue Hospital | All Rights Reserved</p>
+    <p>Email: contact@medivogue.com | Phone: +91 98765 43210</p>
+</footer>
+
+    </body>
+</html>

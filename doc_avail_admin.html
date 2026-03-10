@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--CO5: Meta Description for SEO -->
+    <meta name="description" content="MediVogue Hospital - Live Doctor Availability Tracking System">
+    <meta name="keywords" content="hospital, doctors availability, real-time tracking, healthcare management">
+    <meta name="author" content="S.Asritha">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Live Doctor Availability | MediVogue Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="logo_hms.png" height="70" alt="MediVogue Hospital Logo">
+        <div class="logo">
+            <h1>MediVogue Hospital</h1>
+            <p>Care • Compassion • Commitment</p>
+        </div>
+        <p id="dateTime"></p>
+    </header>
+
+    <body>
+        <header class="top-bar">
+            <h2>Admin Dashboard - Live Doctor Tracking</h2>
+            <p id="dateTime"></p>
+        </header>
+
+        <section class="dashboard">
+            <nav>
+                <a href="admin_dashboard.html"><i class="fas fa-home"></i> Home</a>
+                <a href="pat_adm.html"><i class="fas fa-users"></i> Patients</a>
+                <a href="doc_avail_admin.html" class="active"><i class="fas fa-stethoscope"></i> Doctor Availability</a>
+                <a href="billing.html"><i class="fas fa-rupee-sign"></i> Billing</a>
+                <a href="medicines.html"><i class="fas fa-pills"></i> Medicines</a>
+                <a href="cont_adm_adm.html"><i class="fas fa-phone"></i> Contact</a>
+                <button onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </nav>
+            
+            <br><br>
+            
+            <!-- Live Status Indicator -->
+            <div class="live-status-container">
+                <div class="live-indicator">
+                    <span class="live-dot"></span>
+                    <span id="liveStatusText">Connected to Live Server</span>
+                </div>
+                <div class="api-controls">
+                    <button onclick="refreshDoctorData()" class="refresh-btn" id="manualRefreshBtn">
+                        <i class="fas fa-sync-alt" id="refreshIcon"></i> Refresh Now
+                    </button>
+                    <select id="refreshInterval" onchange="changeRefreshInterval()" class="interval-select">
+                        <option value="15">15 seconds</option>
+                        <option value="30" selected>30 seconds</option>
+                        <option value="60">1 minute</option>
+                        <option value="300">5 minutes</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- API Status Message -->
+            <div id="apiStatus"></div>
+            
+            <!-- Live Statistics Cards -->
+            <div class="stats-grid-modern" id="liveStats">
+                <!-- Populated by JavaScript -->
+            </div>
+            
+            <!-- Add Doctor Button -->
+            <div style="text-align: right; margin: 20px 50px;">
+                <button onclick="showAddDoctorForm()" class="add-doctor-btn">
+                    <i class="fas fa-plus-circle"></i> Add New Doctor
+                </button>
+            </div>
+            
+            <!-- Add Doctor Form (Hidden by default) -->
+            <div id="addDoctorForm" style="display: none;">
+                <h3><i class="fas fa-user-md"></i> Add New Doctor</h3>
+                <form onsubmit="addNewDoctor(event)">
+                    <div class="form-group">
+                        <input type="text" id="docName" placeholder="Doctor Name" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="docDept" required>
+                            <option value="">Select Department</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="General Medicine">General Medicine</option>
+                            <option value="Oncology">Oncology</option>
+                            <option value="Dermatology">Dermatology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="docStatus" required>
+                            <option value="available">Available</option>
+                            <option value="busy">Busy</option>
+                            <option value="unavailable">Not Available</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn"><i class="fas fa-save"></i> Save Doctor</button>
+                        <button type="button" onclick="hideAddDoctorForm()" class="cancel-btn"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Doctors Availability Table -->
+            <div class="table-section">
+                <h3>
+                    <i class="fas fa-stethoscope"></i> 
+                    Live Doctor Availability 
+                    <span class="last-updated" id="lastUpdated"></span>
+                </h3>
+                <br>
+                <div class="table-responsive">
+                    <table id="doctorTable" class="doctor-table">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Doctor Name</th>
+                                <th>Department</th>
+                                <th>Status <i class="fas fa-info-circle" data-tooltip="Live from hospital system"></i></th>
+                                <th>Patients Waiting</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="doctorTableBody">
+                            <tr class="loading-row">
+                                <td colspan="6" style="text-align: center;">
+                                    <i class="fas fa-spinner fa-spin"></i> Loading live doctor data...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Error Message Container -->
+            <div id="errorMessage" style="display: none;"></div>
+            
+            <!-- Connection Status -->
+            <div class="connection-status" id="connectionStatus">
+                <i class="fas fa-wifi"></i> Connected to API Server
+            </div>
+        </section>
+
+        <!-- Announcements Section -->
+        <section class="notice">
+            <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+            <marquee behavior="scroll" direction="left" id="announcementMarquee">
+                Live doctor availability system active | Data refreshes automatically | Free Health Checkup Camp this Sunday
+            </marquee>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 MediVogue Hospital | All Rights Reserved</p>
+            <p><i class="fas fa-envelope"></i> contact@medivogue.com | <i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p class="api-credit">Live Data API: Powered by MediVogue Real-Time System</p>
+        </footer>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <!--CO5: Meta Description-->
+        <meta name="description" content="MediVogue Hospital - Modern healthcare management system">
+<meta name="keywords" content="hospital, healthcare, doctors, appointments, medical records">
+<meta name="author" content="S.Asritha">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Login</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>  <!-- CO2: Header tag -->
+            <img src="logo_hms.png" height="70">
+            <div class="logo">
+                <h1>MediVogue Hospital</h1>
+                <p>Care • Compassion • Commitment</p>
+            </div>
+            <p id="dateTime"></p>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="appointment.html">Appointments</a>
+            <a href="departments.html">Departments</a>
+            <a href="contactadmin.html">Contact</a>
+            <button onclick="logout()">Logout</button>
+        </nav>
+        
+        <br><br>
+        <h2>Admin Login</h2>
+        
+        <!-- Login Form with onsubmit validation -->
+         <!-- CO2: Form element -->
+        <form id="adminLoginForm" onsubmit="return validateAdminLogin(event)">
+            <br><br>
+            Emp ID: <input type="text" id="adminId" placeholder="Enter your ID number" required>
+            <br><br>
+            Password: <input type="password" id="adminPassword" placeholder="Enter Password" required>
+            <br><br>
+            <div id="loginError" style="color: red; display: none;"></div>
+            <br>
+            <i>Use specific ID-password combinations as provided by hospital</i>
+            <br><br>
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn" onclick="resetForm()">Reset</button>
+        </form>
+        
+        <!-- Demo credentials (can be hidden in production) -->
+        <div style="text-align: center; margin-top: 20px; color: gray; font-size: 12px;">
+            <p>Demo Credentials:</p>
+            <p>ID: 1001 → Password: admin@123</p>
+            <p>ID: 1002 → Password: secure@456</p>
+            <p>ID: 1003 → Password: hospital@789</p>
+        </div>
+        
+        <script src="script.js" defer></script>
+    </body>
+</html>
